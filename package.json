@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@qore-id/react-native-qoreid-sdk": "^1.1.0",
+    "@qore-id/react-native-qoreid-sdk": "^1.1.1",
     "react": "18.2.0",
     "react-native": "0.71.8",
     "react-native-webview": "^12.0.2"
