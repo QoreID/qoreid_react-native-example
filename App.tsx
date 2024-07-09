@@ -5,59 +5,17 @@
  * @format
  */
 
-import React, {useState} from 'react';
-import type {PropsWithChildren} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
-  Alert,
   Button,
-  Platform,
   SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
-  Text,
   useColorScheme,
-  View,
 } from 'react-native';
-import {QoreIdSdk, utils} from '@qore-id/react-native-qoreid-sdk';
+import {QoreIdSdk} from '@qore-id/react-native-qoreid-sdk';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 function App(): JSX.Element {
   const [clientId, setClientId] = useState('72K3NYMTIZS4WNFSCMSR');
@@ -90,25 +48,27 @@ function App(): JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  const onError = (data: any) => {
-    console.error(data);
-    Alert.alert('Error', data);
-  };
-
-  const onSumitted = (data: any) => {
+  const onLog = (data: any) => {
     console.debug(data);
-    Alert.alert('Sumitted', data);
   };
 
-  QoreIdSdk.events(onSumitted, onError);
+  useEffect(() => {
+    QoreIdSdk.events(onLog);
+  }, []);
 
   const submit = async () => {
     QoreIdSdk.launch({
-      clientId: clientId,
+      clientId,
+      flowId: 0,
+      applicantData: {firstName, lastName, phoneNumber},
       productCode: selectedProductId,
       customerReference: customerRef,
-      ocrAcceptedDocuments:
-        'DRIVERS_LICENSE_NGA,VOTERS_CARD_NGA,NIN_SLIP_NGA,PASSPORT_NGA',
+      ocrAcceptedDocuments: [
+        'DRIVERS_LICENSE_NGA',
+        'VOTERS_CARD_NGA',
+        'NIN_SLIP_NGA',
+        'PASSPORT_NGA',
+      ],
     });
   };
 
