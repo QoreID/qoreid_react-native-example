@@ -2155,13 +2155,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qore-id/react-native-qoreid-sdk@file:/Users/e.ugwuoke/Documents/vm/qoreid-rn-upgrade/qore-id-react-native-qoreid-sdk-1.2.0.tgz::locator=rntest%40workspace%3A.":
-  version: 1.2.0
-  resolution: "@qore-id/react-native-qoreid-sdk@file:/Users/e.ugwuoke/Documents/vm/qoreid-rn-upgrade/qore-id-react-native-qoreid-sdk-1.2.0.tgz::locator=rntest%40workspace%3A."
+"@qore-id/react-native-qoreid-sdk@npm:1.2.4":
+  version: 1.2.4
+  resolution: "@qore-id/react-native-qoreid-sdk@npm:1.2.4"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 97bf57cc82dba503ae1e8662a5f6c0768c9bf5eeaa3920aafd68fa9b136e860e68ce29e715cb5c904042b4dd087a7259d17b2d2a560d6b13821fdaec6bae090d
+  checksum: f41ed78344453e4c1694e6f043cdc9cd7e4185e1183d468ed5de07b088a3c372e695dc7098140c96bc6e56558198d06e8073e4ff8ee07431b9d80ce27e1fcaac
   languageName: node
   linkType: hard
 
@@ -8469,7 +8469,7 @@ __metadata:
     "@babel/core": ^7.20.0
     "@babel/preset-env": ^7.20.0
     "@babel/runtime": ^7.20.0
-    "@qore-id/react-native-qoreid-sdk": "file:/Users/e.ugwuoke/Documents/vm/qoreid-rn-upgrade/qore-id-react-native-qoreid-sdk-1.2.0.tgz"
+    "@qore-id/react-native-qoreid-sdk": 1.2.4
     "@react-native/babel-preset": 0.74.85
     "@react-native/eslint-config": 0.74.85
     "@react-native/metro-config": 0.74.85

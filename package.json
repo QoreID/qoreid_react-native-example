@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@qore-id/react-native-qoreid-sdk": "file:/Users/e.ugwuoke/Documents/vm/qoreid-rn-upgrade/qore-id-react-native-qoreid-sdk-1.2.0.tgz",
+    "@qore-id/react-native-qoreid-sdk": "1.2.4",
     "react": "18.2.0",
     "react-native": "0.74.3",
     "react-native-webview": "^12.0.2"
